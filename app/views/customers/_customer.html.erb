@@ -1,0 +1,13 @@
+<div class="box">
+  <% if customer.image.attached? %>
+    <%= image_tag customer.image, width: 150 %>
+  <% end %>
+
+  <h3><%= customer.full_name %></h3>
+
+  <p><strong>Email:</strong> <%= customer.email_address.presence || "N/A" %></p>
+
+  <p><strong>Phone:</strong> <%= customer.phone_number %></p>
+
+  <p><strong>Notes:</strong> <%= customer.notes %></p>
+</div>
