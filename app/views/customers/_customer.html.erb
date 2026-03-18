@@ -1,13 +1,19 @@
-<div class="box">
+<div class="customer-card">
+
   <% if customer.image.attached? %>
-    <%= image_tag customer.image, width: 150 %>
+    <%= image_tag customer.image %>
   <% end %>
 
-  <h3><%= customer.full_name %></h3>
+  <div class="customer-info">
+    <h3><%= customer.full_name %></h3>
 
-  <p><strong>Email:</strong> <%= customer.email_address.presence || "N/A" %></p>
+    <p><strong>Email:</strong>
+      <%= customer.email_address.present? ? customer.email_address : "N/A" %>
+    </p>
 
-  <p><strong>Phone:</strong> <%= customer.phone_number %></p>
+    <p><strong>Phone:</strong> <%= customer.phone_number %></p>
 
-  <p><strong>Notes:</strong> <%= customer.notes %></p>
+    <p><strong>Notes:</strong> <%= customer.notes %></p>
+  </div>
+
 </div>
